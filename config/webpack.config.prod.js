@@ -116,7 +116,8 @@ module.exports = {
           /\.css$/,
           /\.json$/,
           /\.svg$/,
-          /\.scss$/
+          /\.scss$/,
+          /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/
         ],
         loader: 'url',
         query: {
@@ -170,6 +171,10 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
+      },
+      {
+        test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader : 'file'
       }
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
